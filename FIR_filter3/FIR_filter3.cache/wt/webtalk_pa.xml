@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Sat May 19 14:09:11 2018">
+<application name="pa" timeStamp="Sat May 19 17:15:13 2018">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="15402d9f9e0a4555a819e22f01dac535" type="ProjectID"/>
 <property name="ProjectIteration" value="1" type="ProjectIteration"/>
@@ -40,7 +40,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="BaseDialog_OK" value="19" type="GuiHandlerData"/>
 <property name="BaseDialog_YES" value="1" type="GuiHandlerData"/>
 <property name="CmdMsgDialog_OK" value="3" type="GuiHandlerData"/>
-<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="146" type="GuiHandlerData"/>
+<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="152" type="GuiHandlerData"/>
 <property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="16" type="GuiHandlerData"/>
 <property name="GraphicalView_ZOOM_FIT" value="1" type="GuiHandlerData"/>
 <property name="GraphicalView_ZOOM_IN" value="23" type="GuiHandlerData"/>
@@ -85,9 +85,9 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="WaveformView_GOTO_TIME_0" value="8" type="GuiHandlerData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="41" type="GuiMode"/>
+<property name="GuiMode" value="42" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="30" type="TclMode"/>
+<property name="TclMode" value="31" type="TclMode"/>
 </item>
 </section>
 </application>
