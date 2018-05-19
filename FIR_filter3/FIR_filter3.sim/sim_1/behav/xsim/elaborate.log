@@ -1,0 +1,16 @@
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto fd3c70261c544d09b8d919bd7ef37bf6 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot FIR_tester1_behav xil_defaultlib.FIR_tester1 -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling architecture rtl of entity xil_defaultlib.fir_filter_syn [fir_filter_syn_default]
+Compiling architecture behavioral of entity xil_defaultlib.fir_tester1
+Built simulation snapshot FIR_tester1_behav
