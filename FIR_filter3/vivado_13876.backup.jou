@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sat May 19 17:49:31 2018
+# Process ID: 13876
+# Current directory: c:/Users/Lemps/FIR_filter/FIR_filter3
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11424 C:\Users\Lemps\FIR_filter\FIR_filter3\FIR_filter3.xpr
+# Log file: c:/Users/Lemps/FIR_filter/FIR_filter3/vivado.log
+# Journal file: c:/Users/Lemps/FIR_filter/FIR_filter3\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Lemps/FIR_filter/FIR_filter3/FIR_filter3.xpr
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1

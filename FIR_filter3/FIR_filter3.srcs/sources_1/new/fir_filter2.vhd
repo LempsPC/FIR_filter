@@ -50,7 +50,7 @@ architecture  rtl  of  fir_filter_syn  is
 
   type array_type is array (1 to 9) of signed (15 downto 0);
 
-  -- (0.125, 0.25, -0.75, 1.25, 1.0, 1.25, -0.75, 0.25, 0.125)
+  -- (0.25, 0.25, -0.75, 1.25, 1.25, 1.25, -0.75, 0.25, 0.25)
 
   constant coeffs: array_type := (
     "0000000100000000", "1111111100000000", "0000010010000000",
@@ -75,7 +75,7 @@ architecture  rtl  of  fir_filter_syn  is
 
     data_in_bf, reg1, reg2, reg3, reg4,
 
-    add1_out, add2_out, add3_out, sub4_out: signed (15 downto 0);
+    add1_out, add2_out, addsub3_out, add4_out: signed (15 downto 0);
 
 
 
@@ -155,7 +155,7 @@ begin
 
       reg1 <= add1_out;    reg2 <= add2_out;
 
-      reg3 <= add3_out;    reg4 <= sub4_out;
+      reg3 <= addsub3_out;    reg4 <= add4_out;
 
     end if;
 
@@ -189,7 +189,7 @@ begin
 
   -- Adder #1 & its multiplexers
 
-  process (del_1, del_7, data_in_bf, del_8, reg1, reg2, reg4, state)
+  process (del_2, del_6, reg1, reg2, reg3, state)
 
     variable op1, op2: signed (15 downto 0);
 
@@ -197,13 +197,13 @@ begin
 
     case state is
 
-      when S0 =>  op1 := del_1;       op2 := del_7;
+      when S0 =>  op1 := del_2;       op2 := del_6;
 
-      when S1 =>  op1 := data_in_bf;  op2 := del_8;
+      when S1 =>  op1 := reg1;  op2 := asr3(reg1);
 
-      when S2 =>  op1 := asr3(reg1);  op2 := reg2;
+      when S2 =>  op1 := reg1;  op2 := reg2;
 
-      when S3 =>  op1 := reg1;        op2 := reg4;
+      when S3 =>  op1 := reg1;        op2 := reg3;
 
     end case;
 
@@ -215,7 +215,7 @@ begin
 
   -- Adder #2 & its multiplexers
 
-  process (del_2, del_6, del_4, reg1, state)
+  process (del_3, del_5, reg2, state)
 
     variable op1, op2: signed (15 downto 0);
 
@@ -223,9 +223,9 @@ begin
 
     case state is
 
-      when S0 =>  op1 := del_2;       op2 := del_6;
+      when S0 =>  op1 := del_3;       op2 := del_5;
 
-      when S1 =>  op1 := del_4;       op2 := asr2(reg1);
+      when S1 =>  op1 := reg2;       op2 := asr2(reg2);
 
       when S2 =>  op1 := who_cares;   op2 := who_cares;
 
@@ -239,9 +239,9 @@ begin
 
 
 
-  -- Adder #3 & its multiplexers
+  -- Adder-subtractor #3 & its multiplexers
 
-  process (del_3, del_5, reg3, state)
+  process (del_4, reg3, reg4, state)
 
     variable op1, op2: signed (15 downto 0);
 
@@ -249,25 +249,29 @@ begin
 
     case state is
 
-      when S0 =>  op1 := del_3;       op2 := del_5;
+      when S0 =>  op1 := del_4;       op2 := asr2(del_4);
 
-      when S1 =>  op1 := reg3;        op2 := asr2(reg3);
+      when S1 =>  op1 := reg3;        op2 := asr2(reg4);
 
-      when S2 =>  op1 := who_cares;   op2 := who_cares;
+      when S2 =>  op1 := reg3;   op2 := asr2(reg4);
 
       when S3 =>  op1 := who_cares;   op2 := who_cares;
 
     end case;
 
-    add3_out <= op1 + op2;
-
+    if state = S2 then
+        addsub3_out <= op1 - op2;
+    else
+        addsub3_out <= op1 + op2;
+    end if;
+    
   end process;
 
 
 
-  -- Subtracter (#4) & its multiplexers
+  -- Adder (#4) & its multiplexers
 
-  process (reg2, reg3, reg4, state)
+  process (del_1, del_7, del_8, data_in, data_in, reg4, state)
 
     variable op1, op2: signed (15 downto 0);
 
@@ -275,17 +279,17 @@ begin
 
     case state is
 
-      when S0 =>  op1 := who_cares;   op2 := who_cares;
+      when S0 =>  op1 := data_in;   op2 := del_8;
 
-      when S1 =>  op1 := reg2;        op2 := asr2(reg2);
+      when S1 =>  op1 := del_1;        op2 := del_7;
 
-      when S2 =>  op1 := reg3;        op2 := reg4;
+      when S2 =>  op1 := who_cares;        op2 := who_cares;
 
       when S3 =>  op1 := who_cares;   op2 := who_cares;
 
     end case;
 
-    sub4_out <= op1 - op2;
+    add4_out <= op1 + op2;
 
   end process;
 

@@ -59,12 +59,17 @@ begin
     
     wait for 10ns;
     sample <= '0';
+    --clk <= '0';
+    
+    --wait for 10ns;
+    
     for i in 0 to 2 loop
         clk <= '1';
         wait for 10ns;
         clk <= '0';
         wait for 10ns;
     end loop;
+    
 end cycle;
  
  
@@ -79,6 +84,17 @@ Port map (data_in => data_in,
 stimuli: process
 begin
    
+--    clk <= '1';
+--    wait for 10ns;
+--    clk <= '0';
+--    wait for 10ns;
+--    clk <= '1';
+--    wait for 10ns;
+--    clk <= '0';
+--    wait for 10ns;
+--    clk <= '1';
+--    wait for 10ns;
+    
     for i in 0 to 10 loop
         data_in <= "0000000000000000";
         cycle(data_in, sample, clk);

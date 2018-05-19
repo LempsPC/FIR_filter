@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sat May 19 17:49:31 2018
+# Process ID: 13876
+# Current directory: c:/Users/Lemps/FIR_filter/FIR_filter3
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11424 C:\Users\Lemps\FIR_filter\FIR_filter3\FIR_filter3.xpr
+# Log file: c:/Users/Lemps/FIR_filter/FIR_filter3/vivado.log
+# Journal file: c:/Users/Lemps/FIR_filter/FIR_filter3\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Lemps/FIR_filter/FIR_filter3/FIR_filter3.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/LempsPC/FIR_filter/FIR_filter3' since last save.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/Lemps/FIR_Filter1/FIR_beh.vhd', nor could it be found using path 'C:/Users/LempsPC/FIR_Filter1/FIR_beh.vhd'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/Lemps/FIR_Filter1/FIR_tester1.vhd', nor could it be found using path 'C:/Users/LempsPC/FIR_Filter1/FIR_tester1.vhd'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/Lemps/FIR_Filter1/FIR_tester1_behav2.wcfg', nor could it be found using path 'C:/Users/LempsPC/FIR_Filter1/FIR_tester1_behav2.wcfg'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.4/data/ip'.
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat May 19 17:49:53 2018...
