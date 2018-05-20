@@ -137,7 +137,8 @@ begin
 
       if state=S0 then
 
-        data_out <= reg1;    data_in_bf <= data_in;
+        --data_out <= reg1;    
+        data_in_bf <= data_in;
 
       end if;
 
@@ -208,6 +209,9 @@ begin
     end case;
 
     add1_out <= op1 + op2;
+    if state = S0 then
+        data_out <= add1_out;
+    end if;
 
   end process;
 

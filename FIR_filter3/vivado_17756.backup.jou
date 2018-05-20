@@ -1,0 +1,85 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sat May 19 17:50:11 2018
+# Process ID: 17756
+# Current directory: c:/Users/Lemps/FIR_filter/FIR_filter3
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17304 C:\Users\Lemps\FIR_filter\FIR_filter3\FIR_filter3.xpr
+# Log file: c:/Users/Lemps/FIR_filter/FIR_filter3/vivado.log
+# Journal file: c:/Users/Lemps/FIR_filter/FIR_filter3\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Lemps/FIR_filter/FIR_filter3/FIR_filter3.xpr
+update_compile_order -fileset sources_1
+update_files -from_files C:/Users/Lemps/FIR_filter/FIR_filter3/FIR_filter3.srcs/sources_1/new/FIR_beh.vhd -to_files C:/Users/Lemps/FIR_Filter1/FIR_beh.vhd -filesets [get_filesets *]
+update_files -from_files C:/Users/Lemps/FIR_filter/FIR_filter3/FIR_tester1.vhd -to_files C:/Users/Lemps/FIR_Filter1/FIR_tester1.vhd -filesets [get_filesets *]
+update_compile_order -fileset sim_1
+launch_simulation
+source FIR_tester1.tcl
+run 1 us
+save_wave_config {C:/Users/Lemps/FIR_filter/FIR_filter3/FIR_tester1_behav.wcfg}
+add_files -fileset sim_1 -norecurse C:/Users/Lemps/FIR_filter/FIR_filter3/FIR_tester1_behav.wcfg
+set_property xsim.view {C:/Users/Lemps/FIR_Filter1/FIR_tester1_behav2.wcfg C:/Users/Lemps/FIR_filter/FIR_filter3/FIR_tester1_behav.wcfg} [get_filesets sim_1]
+close_sim
+launch_simulation
+open_wave_config C:/Users/Lemps/FIR_filter/FIR_filter3/FIR_tester1_behav.wcfg
+source FIR_tester1.tcl
+run 1 us
+close_sim
+launch_simulation
+open_wave_config C:/Users/Lemps/FIR_filter/FIR_filter3/FIR_tester1_behav.wcfg
+source FIR_tester1.tcl
+run 1 us
+close_sim
+launch_simulation
+open_wave_config C:/Users/Lemps/FIR_filter/FIR_filter3/FIR_tester1_behav.wcfg
+source FIR_tester1.tcl
+add_wave {{/FIR_tester1/UUT/del_1}} {{/FIR_tester1/UUT/del_2}} {{/FIR_tester1/UUT/del_3}} {{/FIR_tester1/UUT/del_4}} {{/FIR_tester1/UUT/del_5}} {{/FIR_tester1/UUT/del_6}} {{/FIR_tester1/UUT/del_7}} {{/FIR_tester1/UUT/del_8}} {{/FIR_tester1/UUT/data_in_bf}} {{/FIR_tester1/UUT/reg1}} {{/FIR_tester1/UUT/reg2}} {{/FIR_tester1/UUT/reg3}} {{/FIR_tester1/UUT/reg4}} {{/FIR_tester1/UUT/add1_out}} {{/FIR_tester1/UUT/add2_out}} {{/FIR_tester1/UUT/addsub3_out}} {{/FIR_tester1/UUT/add4_out}} {{/FIR_tester1/UUT/coeffs}} {{/FIR_tester1/UUT/who_cares}} 
+relaunch_sim
+run 1 us
+relaunch_sim
+run 1 us
+add_wave {{/FIR_tester1/UUT/state}} 
+add_wave {{/FIR_tester1/UUT/next_state}} 
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 1 us
+relaunch_sim
+relaunch_sim
+run 1 us
+relaunch_sim
+run 1 us
+synth_design -rtl -name rtl_1
+close_design
+synth_design -rtl -name rtl_1
+close_design
+relaunch_sim
+run 1 us
+relaunch_sim
+run 1 us
+relaunch_sim
+run 1 us
+save_wave_config {C:/Users/Lemps/FIR_filter/FIR_filter3/FIR_tester1_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/Lemps/FIR_filter/FIR_filter3/FIR_tester1_behav.wcfg
+source FIR_tester1.tcl
+run 1 us
+relaunch_sim
+run 1 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 1 us
+relaunch_sim
+run 1 us
+relaunch_sim
+run 1 us
+relaunch_sim
+run 1 us
+relaunch_sim
+run 1 us
+save_wave_config {C:/Users/Lemps/FIR_filter/FIR_filter3/FIR_tester1_behav.wcfg}
+close_sim
