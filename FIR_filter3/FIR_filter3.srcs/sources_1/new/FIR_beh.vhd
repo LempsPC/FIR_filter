@@ -21,7 +21,7 @@ use IEEE.std_logic_arith.all;
 
 architecture  behave  of  fir_filter  is
   type array_type is array (1 to 9) of signed (15 downto 0);
-  -- (0.25, 0.25, -0.75, 1.25, 1.25, 1.25, -0.75, 0.25, 0.25)
+  -- (0.25, -0.25, 1.125, 1.25, 1.25, 1.25, 1.125, -0.25, 0.25)
   constant coeffs: array_type := (
     "0000000100000000", "1111111100000000", "0000010010000000",
     "0000010100000000", "0000010100000000", "0000010100000000",
